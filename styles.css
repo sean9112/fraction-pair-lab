@@ -92,8 +92,12 @@ h2 { letter-spacing:-1px }
 .lab-count { color:#d98443 }
 .lab-count span { font-size:15px }
 .lab-count span { font-weight:500 }
-.mechanic-nav { position:sticky }
-.mechanic-nav { top:100px }
+.mechanic-sidebar { position:sticky }
+.mechanic-sidebar { top:100px }
+.mechanic-sidebar { max-height:calc(100dvh - 120px) }
+.mechanic-sidebar { overflow-y:auto }
+.mechanic-sidebar { scrollbar-gutter:stable }
+.mechanic-nav { position:static }
 .mechanic-nav { display:flex }
 .mechanic-nav { flex-direction:column }
 .mechanic-nav { gap:8px }
@@ -229,6 +233,9 @@ footer a { text-decoration:none }
 .skip-link { background:white }
 .skip-link:focus { top:0 }
 @media (max-width: 991px) {
+.mechanic-sidebar { position:static }
+.mechanic-sidebar { max-height:none }
+.mechanic-sidebar { overflow:visible }
 .mechanic-nav { position:static }
 .mechanic-nav { display:grid }
 .mechanic-nav { grid-template-columns:repeat(5,1fr) }
