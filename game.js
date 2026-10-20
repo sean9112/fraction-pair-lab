@@ -139,7 +139,7 @@ class PairScene extends Phaser.Scene {
   }
 }
 startStage(0)
-const game = new Phaser.Game({type:Phaser.CANVAS,parent:'board',width:800,height:365,backgroundColor:'#fffef9',scale:{mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:PairScene,audio:{noAudio:true},banner:false})
+const game = new Phaser.Game({type:Phaser.CANVAS,parent:'board',width:800,height:365,backgroundColor:'#fffef9',scale:{expandParent:false,mode:Phaser.Scale.FIT,autoCenter:Phaser.Scale.CENTER_BOTH},scene:PairScene,audio:{noAudio:true},banner:false})
 $('continue').onclick = () => {
   state.selected.forEach(i => state.cards[i].open=false)
   state.selected=[]
