@@ -69,6 +69,7 @@ h2 { font-weight: 800 }
 .hud { color: #4d6b60 }
 #board { width: 100% }
 #board { aspect-ratio: 800 / 365 }
+#board { height: auto !important }
 #board { margin: 16px auto 0 }
 #board { max-width: 800px }
 #board canvas { display: block }
