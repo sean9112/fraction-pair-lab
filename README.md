@@ -1,44 +1,47 @@
-# 分數配對實驗室 Fraction Pair Lab
+# 玩中學 · 遊戲式學習機制實驗室
 
-以翻牌配對為核心的 Phaser 遊戲式學習遊戲，將卡牌記憶轉化為分數概念的比較與提取。
+[開啟 GitHub Pages 網站](https://sean9112.github.io/fraction-pair-lab/)
 
-## 線上遊玩
+保留原本單頁式遊戲式學習介紹網站與十種遊戲機制，只將第一項記憶配對替換成「分數配對實驗室」學習遊戲。其餘九項保留 Phaser Examples 官方範例。
 
-[開啟 GitHub Pages 遊戲](https://sean9112.github.io/fraction-pair-lab/)
+## 十種機制與遊戲
 
-## 三個學習關卡
+| 機制 | 遊戲 |
+| --- | --- |
+| 記憶配對 | 分數配對實驗室，學習改編 |
+| 視覺配對 | Emoji Match |
+| 滑塊排序 | Sliding Puzzle |
+| 路徑規劃 | Snake |
+| 區域擴展 | Flood Fill |
+| 線索推理 | Minesweeper |
+| 反彈與角度 | Breakout |
+| 跳躍收集 | First Game |
+| 限時點擊 | Coin Clicker |
+| 精準堆疊 | Stacker |
 
-| 關卡 | 配對方式 | 學習目標 |
-| --- | --- | --- |
-| 看見分數 | 分數與等分圖形 | 理解分子與分母 |
-| 等值分數 | 分數與另一種等分圖形 | 理解同乘相同數，份量不變 |
-| 連結小數 | 分數圖形與小數 | 連結分數與除法 |
+每個遊戲都直接內嵌在介紹頁面，提供重新載入、全螢幕與獨立開啟。官方範例另附原始碼與中文操作提示。網站使用 Bootstrap CDN、固定導覽列、捲軸佔位空間與左側內距補償。
 
-每關四對牌。點擊兩張代表相同份量的卡牌即可配對。配錯會顯示通分說明，閱讀後按「繼續配對」。提示可以暫時揭開全部卡牌，收起後再繼續。遊戲不限時、不扣生命，完成三關後有三題概念挑戰。
+## 替換的學習遊戲
 
-支援滑鼠、觸控、Tab 與 Enter 鍵盤翻牌、全螢幕與 iframe 內嵌。牌號按鈕提供卡牌狀態的文字標籤，回饋使用即時報讀區域。進度與回答僅保留在當前頁面記憶體，重新整理會重設。
+[獨立開啟分數配對實驗室](https://sean9112.github.io/fraction-pair-lab/games/fraction/)
 
-## 本機開啟
+以翻牌比較圖形分數、等值分數與小數，共三關，每關四對卡牌。提供提示、配錯時的通分解釋與三題概念挑戰，不限時、不扣生命。支援滑鼠、觸控與牌號按鈕鍵盤操作。進度僅保留在當前頁面中。
 
-在專案資料夾執行 `python3 -m http.server 8020`，再用瀏覽器開啟 `http://127.0.0.1:8020/`。
+## 本機開啟與部署
 
-無需 npm 或編譯。Phaser 3.90.0 隨專案提供，Bootstrap 5.3.8 透過 CDN 引入，自訂樣式保留主要畫面與操作。
+在本專案資料夾執行 `python3 -m http.server 8020`，瀏覽 `http://127.0.0.1:8020/`。無需 npm 或編譯，也不依賴電腦上其他資料夾。
 
-## 網頁內嵌
-
-iframe 指向 `https://sean9112.github.io/fraction-pair-lab/?embedded=1` 並設定 `allowfullscreen`。內嵌模式隱藏介紹與主導覽，保留遊戲與學習回饋。建議給予至少 760px 高度，可在 iframe 內捲動閱讀。
-
-## 部署
-
-GitHub Pages 使用 `main` 分支的根目錄，推送更新後由 GitHub 自動重新發佈。`.nojekyll` 表示直接提供靜態檔案。
+GitHub Pages 使用 `main` 分支的根目錄，推送後自動重新發佈。
 
 ## 檔案與來源
 
-* `index.html` 頁面與學習說明
-* `game.js` Phaser 畫面、分數判等、關卡流程與概念挑戰
-* `styles.css` 響應式版型與內嵌模式
-* `vendor/phaser.min.js` Phaser 3.90.0，MIT 授權見同資料夾授權檔
+* `index.html` 原本十種機制的單頁介紹
+* `styles.css` 與 `app.js` 原版型與內嵌操作
+* `games/fraction/` 替換的分數學習遊戲
+* `player.html` 與 `player.js` 官方範例載入與相容處理
+* `official/` 從 Phaser Examples 擷取的九款遊戲原始碼、必要素材與拼圖相容引擎
+* `vendor/` 分數遊戲使用的 Phaser 3.90.0 與 MIT 授權
 
-機制靈感來自 [Phaser Examples 的 Card Memory](https://github.com/phaserjs/examples/tree/master/public/src/games/card%20memory)。本遊戲程式、數學內容與圖形為重新製作，沒有複製該範例的美術資產，也不是官方原版。
+官方範例來自 [phaserjs/examples](https://github.com/phaserjs/examples)，下載版本為 `68140eca`。官方程式碼採 MIT 授權，素材有另外的限制，不可用於商業遊戲或帶廣告的遊戲，詳見 `official/UPSTREAM-README.md`。保留素材附帶的授權檔。本網站供機制展示與學習用途。
 
-適合已接觸基本分數概念的學習者。此原型協助練習與討論，三題挑戰並非標準化學習成效測驗。
+分數遊戲以 Card Memory 的翻牌機制為靈感重新製作，數學內容與圖形沒有使用該範例的美術資產。其餘遊戲保留原始玩法。遊戲表現不等同學習成效，請搭配解釋與討論。
